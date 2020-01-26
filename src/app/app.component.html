@@ -66,7 +66,7 @@
     <div class="col">
       <label><b>Kilometers</b></label>
       <div>
-        <h1>{{ miles | convert: 'cm' }}</h1>
+        <h1>{{ miles | convert: 'cm' | number: '1.0-2' }}</h1>
       </div>
     </div>
   </div>
