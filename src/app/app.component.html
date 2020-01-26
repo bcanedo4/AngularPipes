@@ -24,7 +24,7 @@
       <div class="col">
         <label><b>Payment Date</b></label>
         <div>
-          <h1>{{ date }}</h1>
+          <h1>{{ dateRaw | date: "MMMM d, y" }}</h1>
         </div>
       </div>
     </div>
