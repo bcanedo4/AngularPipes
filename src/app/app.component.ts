@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   name: string;
   dateRaw: string;
+  amount: number;
 
   onNameChange(value: string) {
     this.name = value;
@@ -15,5 +16,9 @@ export class AppComponent {
 
   onDateChange(value: string) {
     this.dateRaw = value;
+  }
+
+  onAmountChange(value: string) {
+    this.amount = parseFloat(value);
   }
 }
