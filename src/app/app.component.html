@@ -1,10 +1,11 @@
-<div>
-  <h3>Payment Form</h3>
+<div class="app-container">
+  <h3>Angular Pipes</h3>
 
   <div class="row">
     <div class="form-group col">
-      <label>Payee Name</label>
+      <label class="input-label">Name in titlecase</label>
       <input (input)="onNameChange($event.target.value)" />
+      <p><code class="code-background">name | titlecase</code></p>
     </div>
 
     <div class="col">
@@ -17,8 +18,9 @@
 
   <div class="row">
     <div class="form-group col">
-      <label>Payment Date</label>
+      <label class="input-label">Payment Date</label>
       <input type="date" (input)="onDateChange($event.target.value)" />
+      <p class="code-block"><code class="code-background">dateRaw | date: "MMMM d, y"</code></p>
     </div>
 
     <div class="col">
@@ -31,12 +33,28 @@
 
   <div class="row">
     <div class="form-group col">
-      <label>Payment Amount</label>
-      <input (input)="onAmountChange($event.target.value)" />
+      <label class="input-label">Payment Amount</label>
+      <input (input)="onAmountChangeUSD($event.target.value)" />
+      <p class="code-block"><code class="code-background">amountUSD | currency </code></p>      
     </div>
 
     <div class="col">
-      <label><b>Payment Amount</b></label>
+      <label><b>Payment Amount in USD</b></label>
+      <div>
+        <h1>{{ amountUSD | currency }}</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col">
+      <label class="input-label">Payment Amount</label>
+      <input (input)="onAmountChange($event.target.value)" />
+      <p class="code-block"><code class="code-background">amountUSD | currency: "JPY" </code></p>      
+    </div>
+
+    <div class="col">
+      <label><b>Payment Amount in Yen</b></label>
       <div>
         <h1>{{ amount | currency: "JPY" }}</h1>
       </div>
@@ -45,8 +63,9 @@
 
   <div class="row">
     <div class="form-group col">
-      <label>Height</label>
+      <label class="input-label">Height</label>
       <input (input)="onHeightChange($event.target.value)" />
+      <p class="code-block"><code class="code-background">height | number: "1.0-0" </code></p>      
     </div>
 
     <div class="col">
@@ -59,8 +78,9 @@
 
   <div class="row">
     <div class="form-group col">
-      <label>Miles</label>
+      <label class="input-label">Miles</label>
       <input (input)="onMilesChange($event.target.value)" />
+      <p class="code-block">*Custom convert pipe* <code class="code-background">miles | convert: "cm" | number: "1.0-2" </code></p>      
     </div>
 
     <div class="col">
@@ -70,10 +90,12 @@
       </div>
     </div>
   </div>
+  <p class="code-block">*JSON pipe* <code class="code-background">car | json</code></p>      
+  <p>
+    {{ car | json }}
+  </p>
 </div>
-<p>
-  {{ car | json }}
-</p>
+
 <!-- <div class="test-environment">
   <div class="test-box-1"></div>
 </div>

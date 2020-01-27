@@ -9,6 +9,7 @@ export class AppComponent {
   name: string;
   dateRaw: string;
   amount: number;
+  amountUSD: number;
   height: number;
   miles; number
 
@@ -36,5 +37,9 @@ export class AppComponent {
 
   onAmountChange(value: string) {
     this.amount = parseFloat(value);
+  }
+
+  onAmountChangeUSD(value: string) {
+    this.amountUSD = parseFloat(value);
   }
 }
