@@ -66,10 +66,20 @@
     <div class="col">
       <label><b>Kilometers</b></label>
       <div>
-        <h1>{{ miles | convert: 'cm' | number: '1.0-2' }}</h1>
+        <h1>{{ miles | convert: "cm" | number: "1.0-2" }}</h1>
       </div>
     </div>
   </div>
 </div>
+<p>
+  {{ car | json }}
+</p>
+<!-- <div class="test-environment">
+  <div class="test-box-1"></div>
+</div>
 
-{{ car | json }}
+<div class="grid-test">
+  <div class="grid-child-1"></div>
+  <div class="grid-child-2"></div>
+  <div class="grid-child-3"></div>
+</div> -->
