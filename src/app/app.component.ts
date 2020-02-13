@@ -11,7 +11,8 @@ export class AppComponent {
   amount: number;
   amountUSD: number;
   height: number;
-  miles; number
+  miles: number;
+  password: string;
 
   car = {
     make: 'Toyota',
@@ -41,5 +42,9 @@ export class AppComponent {
 
   onAmountChangeUSD(value: string) {
     this.amountUSD = parseFloat(value);
+  }
+
+  onPasswordChange(value: string) {
+    this.password = value;
   }
 }

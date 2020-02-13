@@ -3,13 +3,13 @@
 
   <div class="row">
     <div class="form-group col">
-      <label class="input-label">Name in titlecase</label>
+      <label class="input-label">Name</label>
       <input (input)="onNameChange($event.target.value)" />
       <p><code class="code-background">name | titlecase</code></p>
     </div>
 
     <div class="col">
-      <label><b>Name</b></label>
+      <label><b>Name in titlecase</b></label>
       <div>
         <h1>{{ name | titlecase }}</h1>
       </div>
@@ -18,13 +18,13 @@
 
   <div class="row">
     <div class="form-group col">
-      <label class="input-label">Payment Date</label>
+      <label class="input-label">Date</label>
       <input type="date" (input)="onDateChange($event.target.value)" />
       <p class="code-block"><code class="code-background">dateRaw | date: "MMMM d, y"</code></p>
     </div>
 
     <div class="col">
-      <label><b>Payment Date</b></label>
+      <label><b>Date MMMM DD YYYY</b></label>
       <div>
         <h1>{{ dateRaw | date: "MMMM d, y" }}</h1>
       </div>
@@ -86,7 +86,7 @@
     <div class="col">
       <label><b>Kilometers</b></label>
       <div>
-        <h1>{{ miles | convert: "cm" | number: "1.0-2" }}</h1>
+        <h1>{{ miles | convert: "km" | number: "1.0-2" }}</h1>
       </div>
     </div>
   </div>
@@ -94,6 +94,12 @@
   <p>
     {{ car | json }}
   </p>
+</div>
+
+<div>
+  <label>Password </label>
+  <input (input)="onPasswordChange($event.target.value)" />
+  {{ password }}
 </div>
 
 <!-- <div class="test-environment">
